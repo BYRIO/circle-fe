@@ -56,5 +56,22 @@ module.exports = {
             title: 'BYRCIRCLE',
             template: 'src/index.html'
         })
-    ]
+    ],
+    devServer: {
+        host: '127.0.0.1',
+        port: 8012,
+        // proxy: {
+        //     '/api/': {
+        //         target: 'http://127.0.0.1:8080',
+        //         changeOrigin: true,
+        //         pathRewrite: {
+        //             '^/api': ''
+        //         }
+        //     }
+        // },
+        historyApiFallback: {
+            index: url.parse(options.dev ? '/static/' : publicPath).pathname
+        }
+    },
+    devtool: options.dev ? '#eval-source-map' : '#source-map'
 };
