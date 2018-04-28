@@ -11,7 +11,7 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.css$/,
+            test: /\.styl$/,
             use: [
                 'style-loader',
                 {
@@ -20,7 +20,8 @@ module.exports = {
                         importLoaders: 1
                     }
                 },
-                'postcss-loader'
+                'postcss-loader',
+                'stylus-loader'
             ]
             // use: ExtractTextPlugin.extract({
             //     fallback: 'style-loader',
