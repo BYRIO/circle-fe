@@ -1,6 +1,6 @@
 <template>
 <div class="page">
-<div class="topnav">
+<div class="topnav ctn">
     <ul class="left">
         <li><a href="/">LOGO</a></li>
         <li><a href="/">IDEA</a></li>
@@ -18,8 +18,12 @@
     <div class="bimg" style="background-image: url('/static/banner.jpg')">
 
     </div>
-    <div class="mainhead">
-
+    <div class="mainhead ctn">
+        <img class="head head_circle" src="/static/head.jpg">
+        <h3>Dimpurr Cheny</h3>
+        <h4>BUPT</h4>
+        <h4>2017 SSE</h4>
+        <p>ACMN / WEB / UI - 千里之行始于足下.</p>
     </div>
 </div>
 </div>
@@ -38,6 +42,9 @@ module.exports = {
 <style scoped lang="stylus">
 topnav_height = 48px
 banner_height = 400px
+.ctn
+    max-width 700px
+    margin 0 auto
 .topnav
     box-sizing border-box
     height topnav_height
@@ -73,6 +80,26 @@ banner_height = 400px
         display block
         width 100%
         height banner_height
-        background #00000066
-
+        background #00000088
+    .mainhead
+        color #FFF
+        height 100px
+        margin-top -100px
+        .head
+            width 64px
+            float left
+            margin-right 10px
+        h3, h4
+            display inline
+            font-weight normal
+        h3
+            font-size 22px
+        h4
+            font-size 18px
+            color #FFFFFF99
+        h4::before
+            content "· "
+        p
+            margin 0
+            color #FFFFFFCC
 </style>
