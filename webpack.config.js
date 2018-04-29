@@ -1,9 +1,20 @@
+
 const path = require('path');
-// var ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const resolve = require('path').resolve;
+const url = require('url');
+const process = require('process');
+
+// const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
-module.exports = {
+const publicPath = '';
+/* global __dirname */
+
+module.exports = (options = {}) => ({
     entry: './src/main.js',
     output: {
         filename: 'bundle.js',
@@ -20,7 +31,11 @@ module.exports = {
                         importLoaders: 1
                     }
                 },
-                'postcss-loader',
+                // {
+                //     loader: 'postcss-loader'
+                //     options: { sourceMap: true }
+                // },
+                'postcss-loader?sourceMap',
                 'stylus-loader'
             ]
             // use: ExtractTextPlugin.extract({
@@ -73,5 +88,5 @@ module.exports = {
             index: url.parse(options.dev ? '/static/' : publicPath).pathname
         }
     },
-    devtool: options.dev ? '#eval-source-map' : '#source-map'
-};
+    devtool: options.dev ? '#eval-source-map' : '#source-map',
+});

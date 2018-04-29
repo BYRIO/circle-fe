@@ -50,10 +50,6 @@ module.exports = {
 <style scoped lang="stylus">
 topnav_height = 48px
 banner_height = 400px
-.ctn
-    max-width 700px
-    margin 0 auto
-    box-sizing border-box
 .topnav
     box-sizing border-box
     height topnav_height
@@ -85,13 +81,12 @@ banner_height = 400px
                 width 32px
                 vertical-align middle
                 // margin-bottom -(32/4)px
-.head_circle 
-    border-radius 100%
 .banner
     margin-top -(topnav_height)
     .bimg
         // min-height banner_height
         background-size cover
+        background-position center
     .bimg::before
         content ""
         display block
