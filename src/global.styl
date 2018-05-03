@@ -4,7 +4,7 @@ topnav_height = 48px
 banner_height = 400px
 ctn_wide_margin = 80px
 
-/* global */
+/* layout */
 
 body
     margin 0
@@ -14,8 +14,8 @@ body
     margin 0 auto
     box-sizing border-box
 .ctn_wide
-    max-width: 100%;
-    margin: 0 ctn_wide_margin;
+    max-width 100%
+    margin 0 ctn_wide_margin
 
 /* tools */
 
@@ -26,11 +26,37 @@ nolist-ul()
 
 /* style */
 
-.head_circle 
-    border-radius 100%
+
+input 
+    background none 
+    border none
+    border-bottom 2px solid #DDD
+    &:focus
+        outline none
+    &.opacity
+        border-color #FFFFFF77
+        color #FFF
+        &::placeholder
+            color #BBB
+
+.btn
+    display inline-block
+    text-decoration none
+    background #DDD
+    color #000
+    padding 10px 16px
+    &.opacity
+        background #FFFFFFAA
+        color #FFF
+        &.noimpact
+            background #FFFFFF33
+
 .count
     &::before
         content "+"
+
+.head_circle 
+    border-radius 100%
 .avatar_group
     nolist-ul()
     > li

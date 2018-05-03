@@ -1,7 +1,7 @@
 <template>
 <div class="page">
 <div class="topnav">
-    <div v-bind:class="{ ctn: ($route.path != '/'), ctn_wide: ($route.path == '/') }"><div>
+    <div class="ctn" v-bind:class="{ ctn_wide: ($route.path == '/') }"><div>
         <ul class="left">
             <li class="logo"><a href="/">BYRCIRCLE</a></li>
             <li><a href="/">IDEA</a></li>
