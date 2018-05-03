@@ -1,19 +1,19 @@
 <template>
-    <p>I'm {{ vue_name }} !</p>
+<div class="c-langing">
+    Landing
+</div>
 </template>
 
 <script>
 module.exports = {
     data: function() {
         return {
-            vue_name: "component"
+            vue_hello: "hello"
         }
     }
 }
 </script>
 
 <style scoped lang="stylus">
-p {
-    color: #00F;
-}
+@import "./global.styl";
 </style>

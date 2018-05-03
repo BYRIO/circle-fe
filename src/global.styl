@@ -1,3 +1,10 @@
+/* setting */
+
+topnav_height = 48px
+banner_height = 400px
+
+/* global */
+
 body
 	margin 0
 	background #F0F0F0
@@ -5,5 +12,151 @@ body
 	max-width 1000px
 	margin 0 auto
 	box-sizing border-box
+
+/* tools */
+
+nolist-ul()
+    padding 0
+    margin 0
+    list-style none
+
+/* style */
+
 .head_circle 
 	border-radius 100%
+.count
+    &::before
+        content "+"
+.avatar_group
+    nolist-ul()
+    > li
+        display inline-block
+        float right
+        margin-right -12px
+        a img, &.more
+                width 32px
+                border 2px solid #FFFFFFAA
+                border-radius 100%
+                // &:first-of-type
+        &.more
+            margin-right 0
+            width 32px
+            height 32px
+            background #dfdfdf
+            text-align center
+            color #FFF
+            font-size 24px
+            line-height 20px
+    &::after
+        content ""
+        display block
+        clear both
+
+/* components */
+
+.psection
+    padding-left 82px
+    .h
+        color #9a9a9a
+        &::before
+            content "C"
+            display inline-block
+            width 20px
+            margin-left -25px
+            margin-right 5px
+    .content
+        color #303030
+        line-height 1.75em
+        p
+            margin 0.8em 0
+    .clist
+        nolist-ul()
+        margin-top 22px
+        & > li
+            display inline-block
+            margin-right 4px
+            margin-bottom 8px
+            vertical-align top
+            & > a
+                display block
+                text-decoration none
+                padding 19px 26px
+                background #e0e0e0
+                transition background 0.2s ease
+                &:hover
+                    background #e0e0e0aa
+                h5
+                    color #000
+                    margin 1px 0 3px 0
+                    .count
+                        color #7a7a7a
+                        font-size 14px
+                        margin-left 6px
+                p
+                    color #707070
+                    margin 0
+                .avatar_group
+                    margin-top 8px
+                    margin-bottom -2px
+        &.clist_width > li
+            display block
+            margin 8px 0
+            & > a
+                padding 16px 26px
+	.tlist_group
+    display inline-block
+    margin-bottom 16px
+    h4
+        font-size 14px
+        font-weight normal
+        color #777
+        margin 4px 0
+	.tlist
+		nolist-ul()
+		li
+			display inline-block
+			a
+				text-decoration none
+				color #4c4c4c
+				font-size 24px
+				margin-right 16px
+				vertical-align bottom
+				line-height 26px
+				.count
+					font-size 26px
+					color #CCC
+					margin-left 5px
+    &.myidea
+        .clist_width > li > a
+            h5
+                height 15px
+                white-space:nowrap;
+                overflow hidden
+                text-overflow ellipsis
+                color #5b5b5b
+                .conf
+                    color #23a0f2
+                    &::after
+                        content " · "
+                        color #5b5b5b
+                .ideaname
+                    color #000
+                small 
+                    color #5b5b5b
+                    font-size 13px
+                    font-weight normal
+                    &::before
+                        content " · "
+            p
+                font-size 13px
+                margin-top 8px
+                .member, .need
+                    display inline
+                ul
+                    nolist-ul()
+                    display inline
+                    margin-left 12px
+                    li
+                        display inline
+                        margin-right 12px
+                        color #070092

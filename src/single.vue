@@ -1,22 +1,7 @@
 <template>
-<div class="page">
-<div class="topnav ctn">
-    <ul class="left">
-        <li class="logo"><a href="/">BYRCIRCLE</a></li>
-        <li><a href="/">IDEA</a></li>
-        <li><a href="/">CONF</a></li>
-        <li><a href="/">CAFE</a></li>
-        <li><a href="/">BYRIOSC</a></li>
-    </ul>
-    <ul class="right">
-        <li class="head"><a href="#"><img class="head_circle" src="/static/head.jpg"></a></li>
-        <li><a href="#">dimpurr</a></li>
-        <li><a href="#">Q</a></li>
-    </ul>
-</div>
+<div class="c-single">
 <div class="banner">
     <div class="bimg" style="background-image: url('/static/banner.jpg')">
-
     </div>
     <div class="mainhead ctn">
         <img class="head head_circle" src="/static/head.jpg">
@@ -149,91 +134,7 @@ module.exports = {
 </script>
 
 <style scoped lang="stylus">
-topnav_height = 48px
-banner_height = 400px
-nolist-ul()
-    padding 0
-    margin 0
-    list-style none
-.tlist_group
-    display inline-block
-    margin-bottom 16px
-    h4
-        font-size 14px
-        font-weight normal
-        color #777
-        margin 4px 0
-.tlist
-    nolist-ul()
-    li
-        display inline-block
-        a
-            text-decoration none
-            color #4c4c4c
-            font-size 24px
-            margin-right 16px
-            vertical-align bottom
-            line-height 26px
-            .count
-                font-size 26px
-                color #CCC
-                margin-left 5px
-.count
-    &::before
-        content "+"
-.avatar_group
-    nolist-ul()
-    > li
-        display inline-block
-        float right
-        margin-right -12px
-        a img, &.more
-                width 32px
-                border 2px solid #FFFFFFAA
-                border-radius 100%
-                // &:first-of-type
-        &.more
-            margin-right 0
-            width 32px
-            height 32px
-            background #dfdfdf
-            text-align center
-            color #FFF
-            font-size 24px
-            line-height 20px
-    &::after
-        content ""
-        display block
-        clear both
-.topnav
-    box-sizing border-box
-    height topnav_height
-    ul
-        nolist-ul()
-        li
-            display inline
-            vertical-align middle
-            line-height 48px
-            a
-                color #FFFFFFDD
-                text-decoration none
-                font-weight bold
-                margin 0 12px;
-    .left, .right
-        display inline-block
-    .left
-        .logo
-            font-size 24px
-    .right
-        float right
-        a
-            font-weight lighter
-        .head
-            margin-right -18px
-            img
-                width 32px
-                vertical-align middle
-                // margin-bottom -(32/4)px
+@import "./global.styl";
 .banner
     margin-top -(topnav_height)
     .bimg
@@ -302,6 +203,9 @@ nolist-ul()
                 text-decoration none
                 padding 19px 26px
                 background #e0e0e0
+                transition background 0.2s ease
+                &:hover
+                    background #e0e0e0aa
                 h5
                     color #000
                     margin 1px 0 3px 0
