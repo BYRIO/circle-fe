@@ -22,7 +22,7 @@
 <div class="psection circle ctn">
     <h3 class="h">圈子</h3>
     <ul class="clist">
-        <li><a href="#">
+        <li><a href="#" class="c">
             <h5>我的圈子<small class="count">68</small></h5>
             <ul class="avatar_group">
                 <li class="more"> ... </li>
@@ -35,7 +35,7 @@
                 <li><a href="#"><img class="head_circle" src="/static/head.jpg"></a></li>
             </ul>
         </a></li>
-        <li><a href="#">
+        <li><a href="#" class="c">
             <h5>主页</h5>
             <ul class="avatar_group">
                 <li class="more"> ... </li>
@@ -48,7 +48,7 @@
                 <li><a href="#"><img class="head_circle" src="/static/head.jpg"></a></li>
             </ul>
         </a></li>
-        <li><a href="#">
+        <li><a href="#" class="c">
             <h5>主页</h5>
             <ul class="avatar_group">
                 <li class="more"> ... </li>
@@ -66,15 +66,15 @@
 <div class="psection link ctn">
     <h3 class="h">链接</h3>
     <ul class="clist">
-        <li><a href="#">
+        <li><a href="#" class="c">
             <h5>主页</h5>
             <p>dimpurr.com</p>
         </a></li>
-        <li><a href="#">
+        <li><a href="#" class="c">
             <h5>主页</h5>
             <p>dimpurr.com</p>
         </a></li>
-        <li><a href="#">
+        <li><a href="#" class="c">
             <h5>主页</h5>
             <p>dimpurr.com</p>
         </a></li>
@@ -108,7 +108,7 @@
 <div class="psection idea myidea ctn">
     <h3 class="h">发起的 IDEA</h3>
     <ul class="clist clist_width">
-        <li><a href="#">
+        <li><a href="#" class="c">
             <h5>
                 <span class="conf">第三届互联网+创业创新大赛</span>
                 <span class="ideaname">BYRCAFE 信息聚合平台</span>
@@ -134,19 +134,8 @@ module.exports = {
 </script>
 
 <style scoped lang="stylus">
-@import "./global.styl";
+@import "./global.styl"
 .banner
-    margin-top -(topnav_height)
-    .bimg
-        // min-height banner_height
-        background-size cover
-        background-position center
-    .bimg::before
-        content ""
-        display block
-        width 100%
-        height banner_height
-        background #00000088
     .mainhead
         color #FFF
         height 100px
@@ -175,87 +164,4 @@ module.exports = {
             color #FFFFFFCC
             font-weight lighter
             font-size 14px
-.psection
-    padding-left 82px
-    .h
-        color #9a9a9a
-        &::before
-            content "C"
-            display inline-block
-            width 20px
-            margin-left -25px
-            margin-right 5px
-    .content
-        color #303030
-        line-height 1.75em
-        p
-            margin 0.8em 0
-    .clist
-        nolist-ul()
-        margin-top 22px
-        & > li
-            display inline-block
-            margin-right 4px
-            margin-bottom 8px
-            vertical-align top
-            & > a
-                display block
-                text-decoration none
-                padding 19px 26px
-                background #e0e0e0
-                transition background 0.2s ease
-                &:hover
-                    background #e0e0e0aa
-                h5
-                    color #000
-                    margin 1px 0 3px 0
-                    .count
-                        color #7a7a7a
-                        font-size 14px
-                        margin-left 6px
-                p
-                    color #707070
-                    margin 0
-                .avatar_group
-                    margin-top 8px
-                    margin-bottom -2px
-        &.clist_width > li
-            display block
-            margin 8px 0
-            & > a
-                padding 16px 26px
-    &.myidea
-        .clist_width > li > a
-            h5
-                height 15px
-                white-space:nowrap;
-                overflow hidden
-                text-overflow ellipsis
-                color #5b5b5b
-                .conf
-                    color #23a0f2
-                    &::after
-                        content " · "
-                        color #5b5b5b
-                .ideaname
-                    color #000
-                small 
-                    color #5b5b5b
-                    font-size 13px
-                    font-weight normal
-                    &::before
-                        content " · "
-            p
-                font-size 13px
-                margin-top 8px
-                .member, .need
-                    display inline
-                ul
-                    nolist-ul()
-                    display inline
-                    margin-left 12px
-                    li
-                        display inline
-                        margin-right 12px
-                        color #070092
 </style>

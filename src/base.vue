@@ -1,18 +1,20 @@
 <template>
 <div class="page">
-<div class="topnav ctn">
-    <ul class="left">
-        <li class="logo"><a href="/">BYRCIRCLE</a></li>
-        <li><a href="/">IDEA</a></li>
-        <li><a href="/">CONF</a></li>
-        <li><a href="/">CAFE</a></li>
-        <li><a href="/">BYRIOSC</a></li>
-    </ul>
-    <ul class="right">
-        <li class="head"><a href="#"><img class="head_circle" src="/static/head.jpg"></a></li>
-        <li><a href="#">dimpurr</a></li>
-        <li><a href="#">Q</a></li>
-    </ul>
+<div class="topnav">
+    <div v-bind:class="{ ctn: ($route.path != '/'), ctn_wide: ($route.path == '/') }"><div>
+        <ul class="left">
+            <li class="logo"><a href="/">BYRCIRCLE</a></li>
+            <li><a href="/">IDEA</a></li>
+            <li><a href="/">CONF</a></li>
+            <li><a href="/">CAFE</a></li>
+            <li><a href="/">BYRIOSC</a></li>
+        </ul>
+        <ul class="right">
+            <li class="head"><a href="#"><img class="head_circle" src="/static/head.jpg"></a></li>
+            <li><a href="#">dimpurr</a></li>
+            <li><a href="#">Q</a></li>
+        </ul>
+    </div></div>
 </div>
 <router-view></router-view>
 </div>
@@ -29,12 +31,14 @@ module.exports = {
 </script>
 
 <style scoped lang="stylus">
-@import "./global.styl";
+@import "./global.styl"
 topnav_height = 48px
 banner_height = 400px
 .topnav
     box-sizing border-box
     height topnav_height
+    .ctn > div
+        margin 0 -12px
     ul
         nolist-ul()
         li

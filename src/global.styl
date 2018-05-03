@@ -2,16 +2,20 @@
 
 topnav_height = 48px
 banner_height = 400px
+ctn_wide_margin = 80px
 
 /* global */
 
 body
-	margin 0
-	background #F0F0F0
+    margin 0
+    background #F0F0F0
 .ctn
-	max-width 1000px
-	margin 0 auto
-	box-sizing border-box
+    max-width 1000px
+    margin 0 auto
+    box-sizing border-box
+.ctn_wide
+    max-width: 100%;
+    margin: 0 ctn_wide_margin;
 
 /* tools */
 
@@ -23,7 +27,7 @@ nolist-ul()
 /* style */
 
 .head_circle 
-	border-radius 100%
+    border-radius 100%
 .count
     &::before
         content "+"
@@ -47,6 +51,8 @@ nolist-ul()
             color #FFF
             font-size 24px
             line-height 20px
+            \.psection-opacity ^[0..-1]
+                background #4848485c
     &::after
         content ""
         display block
@@ -54,10 +60,28 @@ nolist-ul()
 
 /* components */
 
+.banner
+    margin-top -(topnav_height)
+    .bimg
+        // min-height banner_height
+        background-size cover
+        background-position center
+    .bimg::before
+        content ""
+        display block
+        width 100%
+        height banner_height
+        background #00000088
+
 .psection
     padding-left 82px
+    &.ctn_wide
+        margin-left: ctn_wide_margin
+        margin-right: 0
     .h
         color #9a9a9a
+        ^[0].psection-opacity ^[1..-1]
+            color: #FFFFFFAA
         &::before
             content "C"
             display inline-block
@@ -77,21 +101,29 @@ nolist-ul()
             margin-right 4px
             margin-bottom 8px
             vertical-align top
-            & > a
+            & > a.c
                 display block
                 text-decoration none
                 padding 19px 26px
                 background #e0e0e0
                 transition background 0.2s ease
+                ^[0].psection-opacity ^[1..-1]
+                    background #ffffff44
                 &:hover
                     background #e0e0e0aa
+                    ^[0].psection-opacity ^[1..-1]
+                        background #ffffff55
                 h5
                     color #000
                     margin 1px 0 3px 0
+                    ^[0].psection-opacity ^[1..-1]
+                        color #FFF
                     .count
                         color #7a7a7a
                         font-size 14px
                         margin-left 6px
+                        ^[0].psection-opacity ^[1..-1]
+                            color #EEE
                 p
                     color #707070
                     margin 0
@@ -103,29 +135,29 @@ nolist-ul()
             margin 8px 0
             & > a
                 padding 16px 26px
-	.tlist_group
-    display inline-block
-    margin-bottom 16px
-    h4
-        font-size 14px
-        font-weight normal
-        color #777
-        margin 4px 0
-	.tlist
-		nolist-ul()
-		li
-			display inline-block
-			a
-				text-decoration none
-				color #4c4c4c
-				font-size 24px
-				margin-right 16px
-				vertical-align bottom
-				line-height 26px
-				.count
-					font-size 26px
-					color #CCC
-					margin-left 5px
+    .tlist_group
+        display inline-block
+        margin-bottom 16px
+        h4
+            font-size 14px
+            font-weight normal
+            color #777
+            margin 4px 0
+    .tlist
+        nolist-ul()
+        li
+            display inline-block
+            a
+                text-decoration none
+                color #4c4c4c
+                font-size 24px
+                margin-right 16px
+                vertical-align bottom
+                line-height 26px
+                .count
+                    font-size 26px
+                    color #CCC
+                    margin-left 5px
     &.myidea
         .clist_width > li > a
             h5
