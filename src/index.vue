@@ -101,8 +101,6 @@
         <h4>项目意愿</h4>
         <ul class="tlist">
             <li><a href="#">愿意加入项目</a></li>
-            <li><a href="#">交互设计<small class="count">12</small></a></li>
-            <li><a href="#">交互设计<small class="count">12</small></a></li>
         </ul>
     </section>
     <section class="tlist_group">
@@ -293,6 +291,7 @@ nolist-ul()
             margin 0.8em 0
     .clist
         nolist-ul()
+        margin-top 22px
         & > li
             display inline-block
             margin-right 4px
