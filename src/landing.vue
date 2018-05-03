@@ -134,7 +134,7 @@ hot_height = 200px
             .btn_login
                 float left
             .btn_register
-                width 160px
+                width 190px
                 text-align center
 .hot
     overflow hidden
